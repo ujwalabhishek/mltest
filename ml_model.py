@@ -49,3 +49,25 @@ def predict(model, input_data):
     # Make predictions using the loaded model
     predictions = model.predict(input_data)
     return predictions          
+
+
+if __name__ == "__main__":
+    # Example usage
+    data_path = 'data.csv'  # Path to your dataset
+    model_path = 'model.joblib'  # Path to save the trained model
+    
+    # Train the model
+    model = train_model(data_path)
+    
+    # Save the trained model
+    save_model(model, model_path)
+    
+    # Load the model
+    loaded_model = load_model(model_path)
+    
+    # Example input data for prediction (replace with actual data)
+    example_input = pd.DataFrame([[1, 2, 3, 4]], columns=['feature1', 'feature2', 'feature3', 'feature4'])
+    
+    # Make predictions
+    predictions = predict(loaded_model, example_input)
+    print(f"Predictions: {predictions}")
