@@ -5,8 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 def train_model(data_path):
-    # Load the dataset
-    data = pd.read_csv(data_path)
+    # Load the dataset from the specified path
     
     # Preprocess the data
     X = data.drop('target', axis=1)  # Features
